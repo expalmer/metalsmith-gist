@@ -8,7 +8,17 @@ A [Metalsmith](https://github.com/segmentio/metalsmith) plugin that lets you get
 
 ## Usage
 
-In your pages:
+step 1
+
+```js
+var gist = require('metalsmith-gist');
+
+metalsmith.use(gist({
+  debug: true // optional, it's only to show simple warnings
+}));
+```
+
+step 2
 
 ```
 ---
