@@ -14,7 +14,9 @@ step 1
 var gist = require('metalsmith-gist');
 
 metalsmith.use(gist({
-  debug: true // optional, it's only to show simple warnings
+  debug: true,       // optional, it's only to show simple warnings
+  caching: true,     // optional, to caching your gists. default is `true`
+  cacheDir: '.gists' // optional, cache directory. default is `.gists`
 }));
 ```
 
@@ -32,6 +34,31 @@ gist:expalmer/4bc6203dc2a3f7134e78
 
 ```
 
+## You can get single files too.
+
+```
+---
+title: test
+gist: expalmer/4bc6203dc2a3f7134e78 sukima/510438:load_config.rb
+---
+
+Hello World
+
+gist:expalmer/4bc6203dc2a3f7134e78 // here we will get all files that exist in this gist
+
+gist:sukima/510438:load_config.rb  // here we will get only a single file of this gist
+
+```
+
+You can put as many files as you want, you only should put on the head all files together separated by spaces, like this:
+
+```
+---
+title: test
+gist: expalmer/hash1 expalmer/hash2 expalmer/hash3:file1.js expalmer/hash3:file2.js
+---
+...
+```
 
 ## CLI Usage
 
